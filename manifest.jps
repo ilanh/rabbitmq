@@ -1,0 +1,35 @@
+---
+type: install
+version: 1.1
+id: rabbitmq
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/rabbitmq/master
+description:
+  text: /text/description.md
+categories:
+  - apps/popular
+  - apps/clusters
+  - apps/dev-and-admin-tools
+  - apps/microservices
+
+logo: /images/rabbitmq.png
+name: RabbitMQ
+
+globals:
+  password: ${fn.password(20)}
+  username: rabbitadmin
+  vhost: default
+
+nodes:
+- count: 1
+  cloudlets: 32
+  image: "rabbitmq:3-management"
+  nodeGroup: cp
+  displayName: RabbitMQ
+  extip: false
+  env:
+    JELASTIC_EXPOSE: 8080
+    RABBITMQ_DEFAULT_USER: ${globals.username}
+    RABBITMQ_DEFAULT_PASS: ${globals.password}
+
+success: /text/success.md
+
