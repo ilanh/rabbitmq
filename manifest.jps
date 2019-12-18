@@ -27,7 +27,7 @@ nodes:
   displayName: RabbitMQ
   extip: false
   env:
-    JELASTIC_EXPOSE: 8080
+    JELASTIC_EXPOSE: 15672
     RABBITMQ_DEFAULT_USER: ${globals.username}
     RABBITMQ_DEFAULT_PASS: ${globals.password}
 
