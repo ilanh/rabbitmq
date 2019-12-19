@@ -13,6 +13,7 @@ categories:
 
 logo: /images/rabbitmq.png
 name: RabbitMQ
+ssl: true
 
 globals:
   password: ${fn.password(20)}
@@ -26,7 +27,6 @@ nodes:
   nodeGroup: cp
   displayName: RabbitMQ
   extip: false
-  ssl: true
   env:
     JELASTIC_EXPOSE: 15672
     RABBITMQ_DEFAULT_USER: ${globals.username}
